@@ -10,13 +10,11 @@
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-
 .calculadora h1 {
     margin-bottom: 20px;
     font-size: 1.8rem;
     color: #333;
 }
-
 .calculadora input {
     width: 100%;
     padding: 10px;
@@ -29,27 +27,23 @@
     color: #333;
     font-weight: bold;
 }
-
 .calculadora button {
     padding: 10px 20px;
     font-size: 1rem;
     color: #fff;
-    background-color: #007bff;
+    background-color: #ff0000;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin-bottom: 10px;
 }
-
 .calculadora button:hover {
     background-color: #0056b3;
 }
-
 .calculadora p {
     margin-top: 15px;
     font-size: 2rem;
     color: #333;
     font-weight: bold;
 }
-
-

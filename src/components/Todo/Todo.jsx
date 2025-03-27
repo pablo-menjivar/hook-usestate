@@ -1,23 +1,21 @@
 import React, { useState } from "react";
 import "./Todo.css";
 
-// Todo.jsx
-
 const Todo = () => {
     // Estado para manejar la lista de tareas
     const [todos, setTodos] = useState([]);
     // Estado para manejar el valor del input
     const [task, setTask] = useState("");
-
     // Función para agregar una nueva tarea
     const addTodo = () => {
         if (task.trim() === "") return; // Evitar agregar tareas vacías
         setTodos([...todos, { id: Date.now(), text: task, completed: false }]);
         setTask(""); // Limpiar el input
     };
-
-
-
+    // Función para eliminar todas las tareas
+    const clearTodos = () => {
+        setTodos([]);
+    };
     return (
         <div className="todo-container">
             <h1>Todo List</h1>
@@ -26,9 +24,9 @@ const Todo = () => {
                     type="text"
                     value={task}
                     onChange={(e) => setTask(e.target.value)}
-                    placeholder="Add a new task..."
+                    placeholder="Añadir una nueva tarea..."
                 />
-                <button onClick={addTodo}>Add</button>
+                <button onClick={addTodo}>Añadir tarea</button>
             </div>
             <ul className="todo-list">
                 {todos.map((todo) => (
@@ -37,9 +35,10 @@ const Todo = () => {
                     </li>
                 ))}
             </ul>
+            {todos.length > 0 && (
+                <button className="clear-button" onClick={clearTodos}>Eliminar todas las tareas</button>
+            )}
         </div>
     );
 };
-
 export default Todo;
-
