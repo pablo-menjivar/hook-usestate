@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
-import './Calculadora.css';
+import React, { useState } from 'react'
+import './Calculadora.css'
 
 const Calculadora = () => {
-
     const [num1, setNum1] = useState('');
     const [num2, setNum2] = useState('');
     const [resultado, setResultado] = useState(null);
@@ -35,25 +34,17 @@ const Calculadora = () => {
     return (
         <div className="calculadora">
             <h1>Calculadora</h1>
-            <input
-                type="number"
-                placeholder="Ingresa un número..."
-                value={num1}
-                onChange={(e) => setNum1(e.target.value)}
-            />
-            <input
-                type="number"
-                placeholder="Ingresa otro número..."
-                value={num2}
-                onChange={(e) => setNum2(e.target.value)}
-            />
-            <button onClick={handleSumar}>Sumar</button>
-            <button onClick={handleRestar}>Restar</button>
-            <button onClick={handleMultiplicar}>Multiplicar</button>
-            <button onClick={handleDividir}>Dividir</button>
-            <button onClick={handleLimpiarCampos}>Limpiar campos</button>
+            <input type="number" placeholder="Ingresa un número..." value={num1} onChange={(e) => setNum1(e.target.value)}/>
+            <input type="number" placeholder="Ingresa otro número..." value={num2} onChange={(e) => setNum2(e.target.value)}/>
+            <div classname="botones-operaciones">
+                <button onClick={handleSumar}>Sumar</button>
+                <button onClick={handleRestar}>Restar</button>
+                <button onClick={handleMultiplicar}>Multiplicar</button>
+                <button onClick={handleDividir}>Dividir</button>
+            </div>
+            <button className="boton-limpiar" onClick={handleLimpiarCampos}>Limpiar campos</button>
             {resultado !== null && <p>Resultado: {resultado}</p>}
         </div>
     );
 };
-export default Calculadora;
+export default Calculadora

@@ -27,6 +27,13 @@
     color: #333;
     font-weight: bold;
 }
+.botones-operaciones {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    width: 100%;
+    margin-bottom: 15px;
+}
 .calculadora button {
     padding: 10px 20px;
     font-size: 1rem;
@@ -36,10 +43,15 @@
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin-bottom: 10px;
+    margin: 5px;
 }
+.boton-limpiar {
+    width: 100%;
+    margin-top: 10px;
+}
+
 .calculadora button:hover {
-    background-color: #0056b3;
+    background-color: #b30000;
 }
 .calculadora p {
     margin-top: 15px;
