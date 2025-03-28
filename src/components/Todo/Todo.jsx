@@ -16,6 +16,10 @@ const Todo = () => {
     const clearTodos = () => {
         setTodos([]);
     };
+    // Función para eliminar una tarea específica
+    const clearOne = (id) => {
+        setTodos(todos.filter((todo) => todo.id !== id));
+    };
     return (
         <div className="todo-container">
             <h1>Todo List</h1>
@@ -31,7 +35,7 @@ const Todo = () => {
             <ul className="todo-list">
                 {todos.map((todo) => (
                     <li key={todo.id} className={todo.completed ? "completed" : ""}>
-                        <span onClick={() => toggleComplete(todo.id)}>{todo.text}</span>
+                        <span onClick={() => toggleComplete(todo.id)}>{todo.text}<button onClick={() => clearOne(todo.id)}>X</button></span>
                     </li>
                 ))}
             </ul>
